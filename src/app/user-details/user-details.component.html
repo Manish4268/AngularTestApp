@@ -1,0 +1,41 @@
+<main class="py-3">
+    <div class="flex flex-column gap-3 align-items-center justify-content-center">
+        <table *ngIf="listOfUsers.length">
+            <tr>
+              <th>ID</th>
+              <th>Email</th>
+              <th>Username</th>
+              <th>Password</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Phone</th>
+              <th>Geolocation Latitude</th>
+              <th>Geolocation Longitude</th>
+              <th>City</th>
+              <th>Street</th>
+              <th>Number</th>
+              <th>Zipcode</th>
+              <th>__v</th>
+            </tr>
+            @for (user of listOfUsers; track user.id)
+            {
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.password }}</td>
+                    <td>{{ user.name.firstname }}</td>
+                    <td>{{ user.name.lastname }}</td>
+                    <td>{{ user.phone }}</td>
+                    <td>{{ user.address.geolocation.lat }}</td>
+                    <td>{{ user.address.geolocation.long }}</td>
+                    <td>{{ user.address.city }}</td>
+                    <td>{{ user.address.street }}</td>
+                    <td>{{ user.address.number }}</td>
+                    <td>{{ user.address.zipcode }}</td>
+                    <td>{{ user.__v }}</td>
+                </tr> 
+            }
+          </table>
+    </div>
+  </main>

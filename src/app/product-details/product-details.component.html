@@ -1,0 +1,36 @@
+<p-table [value]="[ProductDetails]">
+    <ng-template pTemplate="body" let-product>
+      <tr>
+        <td>ID</td>
+        <td>{{ product.id }}</td>
+      </tr>
+      <tr>
+        <td>Title</td>
+        <td>{{ product.title }}</td>
+      </tr>
+      <tr>
+        <td>Price</td>
+        <td>{{ product.price }}</td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td>{{ product.description }}</td>
+      </tr>
+      <tr>
+        <td>Category</td>
+        <td>{{ product.category }}</td>
+      </tr>
+      <tr>
+        <td>Image</td>
+        <td><img [src]="product.image" alt="Product Image" width="100"></td>
+      </tr>
+      <tr>
+        <td>Rating Rate</td>
+        <td>{{ product.rating.rate }}</td>
+      </tr>
+      <tr>
+        <td>Rating Count</td>
+        <td>{{ product.rating.count }}</td>
+      </tr>
+    </ng-template>
+  </p-table>

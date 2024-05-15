@@ -1,0 +1,29 @@
+<table *ngIf ="listOfProduct.length">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Image</th>
+        <th>Rating Rate</th>
+        <th>Rating Count</th>
+      </tr>
+    </thead>
+    @for (product of listOfProduct; track product.id)
+    {
+      <tr>
+          <td><a style="color: blue;" (click) = "showdetails(product.id)">{{ product.id }}</a></td>
+          <td>{{ product.title }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.category }}</td>
+          <td><img [src]="product.image" alt="Product Image" width="100"></td>
+          <td>{{ product.rating.rate }}</td>
+          <td>{{ product.rating.count }}</td>
+      </tr>
+    }
+    
+  </table>
+  
